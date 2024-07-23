@@ -18,48 +18,34 @@ const Notification = observer(({navigation: {navigate, goBack}}) => {
     {
       id: 1,
       date: 'Today - 20 Sep, 2020',
+      description1:
+        'Your have appointment with mahbuba isl am at 9:00 pm today',
+      how1: 'Just Now',
+      imagee1: images.blue,
+      description2: 'Completed your profile to be better health consults.',
+      how2: '25 Minutes ago',
+      imagee2: images.orange,
+      complete: ' Complete Profile',
+      description3:
+        'Your have appointment with mahbuba isl am at 9:00 pm today',
+      how3: 'Just Now',
+      imagee3: images.navyblue,
     },
     {
       id: 2,
-      description: 'Your have appointment with mahbuba isl am at 9:00 pm today',
-      how: 'Just Now',
-      imagee: images.blue,
-    },
-    {
-      id: 3,
-      description: 'Completed your profile to be better health consults.',
-      how: '25 Minutes ago',
-      imagee: images.orange,
+      date: '19 Sep, 2020',
+      description1:
+        'Your have appointment with mahbuba isl am at 9:00 pm today',
+      how1: 'Just Now',
+      imagee1: images.purple,
+      description2: 'Completed your profile to be better health consults.',
+      how2: '25 Minutes ago',
+      imagee2: images.orange,
       complete: ' Complete Profile',
-    },
-    {
-      id: 4,
-      description: 'Your have appointment with mahbuba isl am at 9:00 pm today',
-      how: 'Just Now',
-      imagee: images.navyblue,
-    },
-    {
-      id: 5,
-      date: '20 Sep, 2020',
-    },
-    {
-      id: 6,
-      description: 'Your have appointment with mahbuba isl am at 9:00 pm today',
-      how: 'Just Now',
-      imagee: images.blue,
-    },
-    {
-      id: 7,
-      description: 'Completed your profile to be better health consults.',
-      how: '25 Minutes ago',
-      imagee: images.orange,
-      complete: ' Complete Profile',
-    },
-    {
-      id: 8,
-      description: 'Your have appointment with mahbuba isl am at 9:00 pm today',
-      how: 'Just Now',
-      imagee: images.navyblue,
+      description3:
+        'Your have appointment with mahbuba isl am at 9:00 pm today',
+      how3: 'Just Now',
+      imagee3: images.navyblue,
     },
   ];
   return (
@@ -90,7 +76,9 @@ const Notification = observer(({navigation: {navigate, goBack}}) => {
       </View>
 
       <FlatList
-        contentContainerStyle={{}}
+        style={{flexGrow: 0}}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{marginTop: hp(0.1)}}
         data={data}
         keyExtractor={item => {
           item.id;
@@ -98,11 +86,17 @@ const Notification = observer(({navigation: {navigate, goBack}}) => {
         renderItem={({item, index}) => {
           return (
             <NotificationCard
-              date={item?.date}
-              imagee={item?.imagee}
-              description={item?.description}
-              how={item?.how}
-              complete={item?.complete}
+              date={item.date}
+              description1={item.description1}
+              how1={item.how1}
+              imagee1={item.imagee1}
+              description2={item.description2}
+              how2={item.how2}
+              imagee2={item.imagee2}
+              description3={item.description3}
+              how3={item.how3}
+              imagee3={item.imagee3}
+              complete={item.complete}
             />
           );
         }}
